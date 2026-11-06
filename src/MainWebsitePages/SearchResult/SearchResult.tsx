@@ -16,6 +16,7 @@ type searchResultProductType={
   price:number,
   imageURL:string,
   stock:number
+  unit:string
 }
 
 type responseType=searchResultProductType[];
@@ -114,6 +115,9 @@ function SearchResult(): React.JSX.Element {
           {searchResultProductsData &&
             searchResultProductsData.map((product) => (
               <ProductCard
+              unit={product.unit}
+
+              
               setIsError={setIsError}
                 price={product.price}
                 productId={product.productId}
