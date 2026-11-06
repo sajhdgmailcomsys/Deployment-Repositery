@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  height: 64px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+.previouspagebutton{
+    background: transparent;
+    border: none;
+    width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Previous/Back Navigation Icon Button */
+.header >.previouspagebutton> img {
+    width: 100%;
+    height: 100%;
+  
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+.header >.previouspagebutton> img:hover {
+  transform: scale(1.05);
+}
+.header >.previouspagebutton> img:active {
+  transform: scale(0.95);
+}
+
+/* Search Wrapper Box */
+.header > div {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Search Icon Inside Input Box */
+.header > div > img {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  pointer-events: none; /* Allows user clicks to bleed straight onto the input */
+  opacity: 0.5;
+}
+
+/* Clean Input Field Styling */
+.header input {
+  width: 100%;
+  height: 40px;
+  padding: 0 16px 0 44px; /* Padding-left makes room for the icon */
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px; /* Modern pill shape design */
+  outline: none;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.header input:focus {
+  border-color: #000000;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}

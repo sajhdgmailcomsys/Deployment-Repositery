@@ -1,0 +1,87 @@
+/* Outer Interactive Container Box */
+.paymentmethodcard {
+  /* Layout Model */
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* Modern uniform spacing between icon and text */
+  padding: 1rem 1.25rem;
+  width: 100%; /* Stretches fully inside your vertical container stack */
+  box-sizing: border-box;
+  
+  /* Core Aesthetics */
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0; /* Clean, soft neutral outline borders */
+  border-radius: 14px; /* Softer, premium rounded design profile */
+  cursor: pointer;
+  
+  /* Hardware Accelerated Animations */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none; /* Prevents text from turning blue on rapid double-clicks */
+
+  /* Modern Hover Action (Only when NOT selected) */
+  &:hover:not(:global(.selected)) {
+    border-color: #cbd5e1;
+    background-color: #f8fafc;
+    transform: translateY(-1px); /* Premium subtle floating effect */
+  }
+
+  /* Active Selection State (Triggers when .selected string is appended) */
+  &:global(.selected) {
+    border-color: #22c55e; /* Accessible modern emerald green border */
+    background-color: #f0fdf4; /* Ultra-soft active backdrop green tint */
+    transform: scale(0.99); /* Springy, tactile native button press response */
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.06);
+  }
+}
+
+/* Protective Container Layer for Branding Logos */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background-color: #f1f5f9; /* Neutral base plate backdrop */
+  border-radius: 10px;
+  flex-shrink: 0; /* Solid lock: Flexbox will never crunch or squeeze the icon width */
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+
+  /* Changes the icon plate background color when the card is active */
+  :parent(:global(.selected)) & {
+    background-color: #dcfce7;
+  }
+
+  /* Core Payment Brand Image Setup */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* CRITICAL: Safeguards diverse logo shapes from warping */
+    padding: 6px;
+    box-sizing: border-box;
+    display: block;
+  }
+}
+
+.contentWrapper {
+  flex-grow: 1; 
+
+  p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500; 
+    color: #334155;
+    line-height: 1.45;
+    transition: color 0.2s ease;
+
+    :parent(:global(.selected)) & {
+      color: #14532d; 
+    }
+  }
+}
+
+.contentWrapper .paymentMethodFee p{
+  color: blueviolet;
+
+
+}

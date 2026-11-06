@@ -1,0 +1,220 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.loginbackground {
+  width: 100vw;
+  cursor: default;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(-225deg, #6667ab, #adaef6);
+}
+.loginscreen {
+  width: 50vw;
+  height: auto;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: 2vw;
+  padding-bottom: 0;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.firtext {
+  white-space: nowrap;
+  margin-bottom: 3vh;
+  font-size: 8vw;
+  font-weight: 500;
+  color: #2b2d42;
+  margin-top: -3%;
+}
+.loginbackground form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.loginscreen label {
+  display: block;
+    text-transform: uppercase;
+  cursor: text;
+}
+.loginscreen div {
+  color: black;
+  position: relative;
+  border: 1px black solid;
+  width: 100%;
+  padding: 10px;
+  margin-top: 3vh;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: text;
+}
+#emailbox {
+  margin-top: 0;
+}
+
+.loginscreen div:hover {
+  background-color: rgba(215, 208, 208, 0.575);
+}
+.forgpasslink{
+  align-self: start;
+  color: #890d92;
+  text-decoration: none;
+}
+
+.loginscreen input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding-top: 3%;
+}
+.loginscreen input:focus {
+  outline: none;
+}
+.showpassbutton {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 40%;
+  right: 2vw;
+  border-radius: 5px;
+}
+.showpassbutton:hover {
+  background-color: rgba(0, 0, 0, 0.108);
+}
+.showpassbutton:active {
+  background-color: transparent;
+}
+.loginbackground img {
+  width: 2vw;
+}
+
+.alternativemethod {
+  margin-bottom: 1vh;
+}
+
+
+/* Merged directly into your login class with a distinct, premium style for white backgrounds */
+.loginbutton {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-weight: 600;
+  padding: 1.3vh;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+
+  /* Completely different solid color from signup to pop off white layout */
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 2px solid #2563eb;
+
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.15);
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  margin-top: 2vh;
+  font-size: 2.3vw;
+  margin-bottom: 1vh;
+}
+
+.loginbutton:hover {
+  background-color: #1d4ed8; /* Darker blue on hover */
+  border-color: #1d4ed8;
+  box-shadow: 0 6px 10px -1px rgba(37, 99, 235, 0.2);
+}
+.error{
+    align-self: start;
+  color: red;
+  margin-left: 0vw;
+}
+
+.loginbutton:active {
+  background-color: #1e40af;
+  border-color: #1e40af;
+  transform: scale(0.96); /* Smooth physical click shrink */
+}
+
+.loadingscreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  cursor: default;
+}
+.loadingscreen p {
+  font-size: 4vw;
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+  .loginscreen img {
+    width: 4.5vw;
+  }
+  .loginbutton {
+    font-size: 23px;
+  }
+  .firtext {
+    font-size: 10vh;
+  }
+  .loginscreen {
+    width: 70vw;
+  }
+}
+
+
+@media screen and (orientation: landscape) and (max-height:550px) {
+  .loginscreen{
+    width: 70vw;
+    transform: scale(0.75);
+    
+  }
+
+  .firtext{
+    font-size: 20vh;
+  }
+  
+  
+}
+
+@media screen and (max-width:450px) {
+  .loginscreen{
+    width: 85vw;
+  }
+  
+}
+@media screen and (min-width:1300px) and (min-height:1020px) {
+  .loginscreen{
+    transform: scale(1.3);
+  }
+  
+}
+@media screen and (min-height:1020px) {
+  .loginscreen{
+    transform: scale(1.3);
+  }
+  
+}
+
+

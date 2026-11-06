@@ -1,0 +1,97 @@
+/* The Product Card - Standalone & Responsive */
+.productcard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.productcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.productcard:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.05s ease, box-shadow 0.05s ease; /* Ultra-snappy click feel */
+}
+
+/* Isolate the card so it won't shake when clicking the inner button */
+.productcard:has(.addtocart:active) {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Modern Image container using aspect-ratio */
+.productcard img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps image square */
+  object-fit: cover;   /* Prevents stretching/distortion */
+  border-radius: 8px;
+  background-color: #f8fafc;
+}
+
+/* Description Text styling */
+.description {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.5;
+  
+  /* Multi-line truncation: Clips description to exactly 2 lines with '...' */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.85rem; 
+}
+
+/* Price styling */
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.7rem;
+  margin-top: auto; /* Pushes button to bottom if description is short */
+}
+.stock{
+  margin-top: 0.4rem;
+  background-image: linear-gradient(-225deg,rgb(153, 116, 255),rgb(223, 39, 39));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 1.3rem;
+}
+
+/* Modern Accessible Button */
+.addtocart {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Button Hover State */
+.addtocart:hover {
+  background-color: #1d4ed8;
+}
+
+/* Button Active Press State */
+.addtocart:active {
+  transform: scale(0.98);
+}

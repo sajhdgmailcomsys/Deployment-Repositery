@@ -1,0 +1,36 @@
+/* Base Container Surface Outer Shell */
+.paymentmethodcontainer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8fafc; /* ultra-soft modern layout backdrop tint */
+  padding: 1.5rem;
+  border-radius: 20px; /* premium pillared look */
+  border: 1px solid #e2e8f0;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.015); /* light containment box depth */
+  height: 68vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+/* Headings Block Layout Section */
+.title {
+  margin-bottom: 1.25rem; /* establishes exact separation from the card list */
+  
+  p {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600; /* bolded for modern emphasis */
+    color: #0f172a; /* high contrast deep charcoal color text */
+    letter-spacing: -0.02em; /* premium typography tracking adjustment */
+  }
+}
+
+/* The Cards Row Content Stack */
+.cardscontent {
+  /* Full-width vertical card stack architecture */
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* neat uniform row spacing layout lines */
+  width: 100%;
+}

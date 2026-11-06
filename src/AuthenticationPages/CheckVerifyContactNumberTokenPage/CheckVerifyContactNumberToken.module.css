@@ -1,0 +1,117 @@
+/* Container & Loading State */
+.background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  perspective: 300px;
+}
+
+
+.successScreen {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  max-width: 440px;
+  width: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  
+}
+
+
+
+.iconWrapper {
+  width: 100px;
+  height: 100px;
+  background-color: #f0fdf4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem auto;
+}
+
+.iconWrapper img {
+  width: 80px;
+  animation: scaleCheck 0.4s 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.title {
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.actionButton {
+  width: 100%;
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotateY(0deg) translateY(20px);
+    
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateY(360deg) translateY(0);
+  }
+}
+
+@keyframes scaleCheck {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments for tiny screens */
+@media (max-width: 480px) {
+  .successScreen {
+    padding: 2rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.25rem;
+  }
+}

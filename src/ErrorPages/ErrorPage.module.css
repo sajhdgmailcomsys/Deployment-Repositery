@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centers the card perfectly on any screen size */
+.background {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(330deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+.header{
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+}
+
+.header img{
+  width: 6vh;
+  align-items: start;
+  margin: 5px;
+  
+}
+.content{
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive, modern glass container */
+.errorscreen {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Styles the h1 tag inside the errorscreen container */
+.errorscreen h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Styles the p tag inside the errorscreen container */
+.errorscreen p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+/* Responsive layout adjustments for mobile screens */
+@media (max-width: 480px) {
+  .header img{
+    width: 30px;
+  }
+  .errorscreen {
+    padding: 30px 20px;
+    transform: scale(0.8);
+    height: calc(100%+5%);
+  }
+
+  .errorscreen h1 {
+    font-size: 3.5rem;
+  }
+
+  .errorscreen p {
+    font-size: 1rem;
+  }
+  
+}
+
+@media screen and (max-height:550px) {
+    .errorscreen{
+        transform: scale(0.7);
+    }
+    
+}

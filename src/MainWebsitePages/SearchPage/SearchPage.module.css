@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(55deg, rgb(165, 249, 190),rgb(203, 158, 216));
+
+
+}
+.searchpage{
+    width: 60vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+
+@media screen and (max-width:830px) {
+    .searchpage{
+        width: 100vw;
+    }
+    
+}
+
+@media screen and (min-height:852px) {
+      .searchpage{
+        width: 100vw;
+    }
+}

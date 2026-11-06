@@ -1,0 +1,73 @@
+.orderitemscontainer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #f9fafb;
+}
+
+.orderitemscontainer[data-is-order-item-container-open="true"] {
+  grid-template-rows: 1fr;
+  border-top: 1px solid #e5e7eb;
+}
+
+.orderitemscontainer > div {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  transition: padding 0.35s ease;
+}
+
+.orderitemscontainer[data-is-order-item-container-open="true"] > div {
+  padding: 1.5rem;
+}
+
+.orderitem {
+  display: flex;
+  gap: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+
+
+.orderitem:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.orderitemimage img {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+}
+
+.orderitemdetails {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+}
+
+.orderitemdescription p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.orderitemquantity p,
+.orderitemunitprice p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.orderitemsubtotal {
+  text-align: right;
+  font-weight: 600;
+  color: #111827;
+}

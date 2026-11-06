@@ -1,0 +1,10 @@
+.cartproducts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 70vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+
+}

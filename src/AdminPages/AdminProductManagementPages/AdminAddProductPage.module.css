@@ -1,0 +1,276 @@
+/* Base Layout & Wrapper Containers */
+.mainbackground {
+  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.background {
+    background-color: #f8fafc;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Form Container Section */
+.background > div:last-child {
+  flex: 1;
+  width: 100vw;
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Form Structure utilizing modern Grid Areas */
+.background form {
+  display: grid;
+  width: 100%;
+  max-width: 1000px;
+  gap: 1.25rem;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  
+  grid-template-columns: repeat(6, 1fr);
+  /* FIX 1: Removed catsug and brandsug rows so the grid layout scales seamlessly */
+  grid-template-areas:
+    "desc     desc     desc     desc     desc     desc"
+    "cost     cost     cost     selling  selling  selling"
+    "cat      cat      cat      brand    brand    brand"
+    "primary  primary  primary  stock    stock    unit"
+    "gallery  gallery  gallery  details  details  details"
+    "featured featured featured actions  actions  actions";
+}
+
+.description { grid-area: desc; }
+.costprice { grid-area: cost; }
+.sellingprice { grid-area: selling; }
+.categoryname { grid-area: cat; position: relative ; } 
+.brandname { grid-area: brand; position: relative ; }    
+.primaryimage { grid-area: primary; }
+.stock { grid-area: stock; }
+.unit { grid-area: unit; }
+.productimages { grid-area: gallery; }
+.detaileddescription { grid-area: details; }
+
+/* Styles targets the second wrapper using the shared description name */
+.isfeaturedcheckbox {
+  grid-area: featured;
+  display: flex ;
+  align-items: center;
+  gap: 0.625rem;                  
+  width: 1.15rem ;
+  height: 1.15rem ;
+  accent-color: #2563eb;
+  cursor: pointer;
+  margin: 0;
+  padding: 0 ;
+  border: none ;
+  box-shadow: none ;
+}
+
+
+
+
+.submitbutton {
+  grid-area: actions;
+  align-self: center;
+  justify-self: end;
+}
+
+/* Global Form Typography & Element Design */
+.background form label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 0.5rem;
+}
+.isfeaturedcheckbox label {
+
+  margin:0!important;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;           
+}
+
+/* Overriding inline rules elegantly with box-sizing */
+.background form input,
+.background form textarea {
+  width: 100% ; 
+  box-sizing: border-box ;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: #1e293b;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.background form input:focus,
+.background form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.background form textarea {
+  resize: vertical;
+}
+
+
+.errortext {
+  color: #dc2626 ;
+  font-size: 0.75rem;
+  margin-top: 0.375rem;
+  font-weight: 500;
+}
+
+/* Dropdown Context Suggestions Boxes - Flying Popover Config */
+.categorysuggestions,
+.brandsuggestions {
+  /* FIX 3: Removed grid-area assignment entries completely so absolute scaling functions */
+  position: absolute ;
+  top: 100% ;                  
+  left: 0 ;
+  width: 100% ;                
+  background-color: #ffffff ;
+  border: 1px solid #cbd5e1 ;
+  border-radius: 6px ;
+  
+  /* Forces the suggestion box window over primary image and stock boxes below it */
+  z-index: 999 ;    
+  
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1) ; 
+  
+  max-height: 200px ;
+  overflow-y: auto ;           
+  margin-top: 0.25rem ;        
+  box-sizing: border-box ;
+}
+
+/* Style Individual Buttons Inside Suggestions */
+.categorysuggestion button,
+.brandsuggestion button {
+  width: 100% ;
+  text-align: left ;
+  padding: 0.625rem 0.875rem ;
+  background: transparent ;
+  border: none ;
+  cursor: pointer ;
+  transition: background-color 0.1s ease ;
+}
+
+.categorysuggestion button:hover,
+.brandsuggestion button:hover {
+  background-color: #f1f5f9 ; 
+}
+
+.categorysuggestion p,
+.brandsuggestion p {
+  margin: 0 ;
+  font-size: 0.875rem ;
+  color: #334155 ;
+}
+
+
+.productimages > div {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 0.5rem ;
+}
+
+.productimages > div input {
+  padding-right: 5rem ;
+}
+
+.productimages > div button {
+  position: absolute;
+  right: 0.375rem;
+  opacity: 0;
+  visibility: hidden;
+  padding: 0.375rem 0.75rem ;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, background-color 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.productimages > div:hover button {
+  opacity: 1;
+  visibility: visible;
+}
+
+.productimages > div button:hover {
+  background-color: #dc2626;
+}
+
+.productimages > button[type="button"] {
+  padding: 0.5rem 1rem ;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 0.25rem;
+}
+
+.productimages > button[type="button"]:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+/* Form Action Primary Submission Trigger */
+.submitbutton {
+  width: auto;
+  min-width: 140px;
+  padding: 0.75rem 1.5rem ;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #16a34a;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.15s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.submitbutton:hover:not(:disabled) {
+  background-color: #15803d;
+}
+
+.submitbutton:disabled {
+  background-color: #cbd5e1 ;
+  color: #94a3b8;
+  cursor: not-allowed ;
+}
+
+/* Fluid Viewports / Mobile Media Breakpoint query */
+@media (max-width: 768px) {
+  .background form {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "desc" "cost" "selling" "cat" "brand"
+      "primary" "stock" "unit" "gallery" "details" "featured" "actions";
+    padding: 1.5rem;
+  }
+  
+  .submitbutton {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

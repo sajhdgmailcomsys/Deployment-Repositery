@@ -1,0 +1,323 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.successbackground{
+    z-index: 20;
+      width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+  background-color: #77a9f3e1;
+}
+.successbackground img{
+  width: 12vw;
+  margin-top: 10vh;
+  margin-bottom: 3vh;
+}
+
+.successtext{
+  font-size:1.9vw ;
+    text-align:center;
+    font-weight: 600;
+    width: auto;
+    margin-bottom: 1vh;
+
+}
+.successscreen{
+  height: 100vh;
+  width: 50vw;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 33px 33px 0 0;
+  padding-left:2vw ;
+  padding-right: 2vw;
+}
+
+
+.loginlinktext{
+  font-size: 2.6vh;
+  margin-bottom: 3vh;
+}
+
+
+/* The Code For The Single Resend Button. Starts Here */
+.btn155 {
+    background: #00a1ff;
+    color: white;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    letter-spacing: 1px;
+    padding: 13px 50px 13px 13px;
+    overflow: hidden;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-image: radial-gradient(circle at center center, #06f2c6, #0c66c5);
+    align-self: end;
+    height: 8vh;
+}
+
+.btn155 .buttonicon {
+    background: #ffffff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    border-radius: 7px;
+    right: 5px;
+    top: 5px;
+    bottom: 5px;
+    transition: all 0.3s;
+}
+
+.btn155:hover .buttonicon {
+    width: calc(100% - 10px);
+}
+
+.btn155 .buttonicon svg {
+    width: 1.1em;
+    transition: transform 0.3s;
+    color: #000000;
+}
+
+.btn155:hover .buttonicon svg {
+    transform: translateX(0.1em);
+}
+
+.btn155:active .buttonicon {
+    transform: scale(0.95);
+}
+
+/*** disabled style ***/
+.btn155:disabled {
+    pointer-events: none;
+    opacity: .65;
+    color: #666666;
+    background: #dcdcdc;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+.btn155:disabled .buttonicon {
+    background: #cccccc;
+}
+/* And Ends Here*/
+
+
+
+
+
+.loadingscreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  cursor: default;
+  z-index: 30;
+
+}
+.loadingscreen p {
+  font-size: 4vw;
+}
+
+
+
+/* Container for the whole card */
+.background {
+  position: absolute; /* Required for 'inset: 0' to work */
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+/* First paragraph text */
+.firtext {
+  font-size: 1rem;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  max-width: 400px;
+}
+
+/* Inner form container */
+.verifyemailbackground {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #d5eeff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Section title */
+.sectext {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.verifyemailcontainer{
+  padding: 1.2rem;
+  transform: scale(1.2);
+}
+
+/* Form structure */
+.verifyemailbackground form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Input field container */
+.verifyemailbackground form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Form label */
+.verifyemailbackground label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+/* Form input */
+.verifyemailbackground input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.verifyemailbackground input:focus {
+  border-color: #3182ce;
+}
+
+/* Error message text */
+.error {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin: -0.5rem 0 0 0;
+}
+
+/* Submit button */
+.verifyemailbackground button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #3182ce;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.verifyemailbackground button:hover {
+  background-color: #2b6cb0;
+}
+
+/* Sign up navigation link */
+.signuplink {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #3182ce;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.signuplink:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width:900px) {
+  .verifyemailcontainer{
+    transform: scale(1.2);
+  }
+  
+    .successbackground {
+    background-color: rgb(255, 255, 255);
+  }
+  .successscreen {
+    width: 100vw;
+  }
+  .successbackground img {
+    width: 15vw;
+  }
+  .successtext {
+    font-size: 3.5vh;
+  }
+
+}
+@media screen and (min-height:1300px) , (min-height:1020px) {
+  .verifyemailcontainer{
+    transform: scale(1.6);
+  }
+
+    .successbackground {
+    background-color: white;
+  }
+  .successscreen img {
+    width: 25vw;
+  }
+  .successscreen {
+    width: 70vw;
+  }
+  .successtext {
+    font-size: xx-large;
+  }
+  .btn155 {
+    height: 4vh;
+    transform: scale(1.3);
+  }
+  
+}
+
+@media screen and (orientation: landscape) and (max-height:550px) {
+  .verifyemailcontainer{
+    transform: scale(0.8);
+  }
+
+    .btn155 {
+    height: 10vh;
+  }
+  .successscreen {
+    width: 70vw;
+  }
+  .successtext {
+    font-size: 5vh;
+  }
+
+}

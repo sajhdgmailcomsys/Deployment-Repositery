@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.errorbackground{
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, display 0.4s ease allow-discrete;
+}
+.errorbackground[data-active="true"]{
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+@starting-style {
+  .errorbackground[data-active="true"] {
+    opacity: 0;
+  }
+}
+
+
+
+
+.errorscreen {
+  background: rgb(144, 149, 149);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 20px 40px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+}
+
+.errorscreen h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  letter-spacing: -1px;
+  background: linear-gradient(to right, #ffffff, #c4c4af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Styles the p tag inside the errorscreen container */
+.errorscreen p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin: 0;
+}
+
+.tryagainbutton{
+  width: 40%;
+  height: 30px;
+  margin-top: 3%;
+  border-radius: 4px;
+  border: none;
+  background-image: linear-gradient(45deg, rgb(119, 171, 204),rgb(10, 222, 255)) ;
+  transition: transform 0.2s linear;
+  
+}
+.tryagainbutton:hover {
+  transform: scale(1.1);
+}
+.tryagainbutton:active{
+  transform: scale(0.95);
+}

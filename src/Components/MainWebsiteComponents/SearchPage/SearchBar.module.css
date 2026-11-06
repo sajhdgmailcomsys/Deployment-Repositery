@@ -1,0 +1,108 @@
+.searchContainer {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.searchbar {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  background: rgb(248, 245, 245);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 16px; /* Modern squircle rounded corners */
+  padding: 0.875rem 1.25rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.6);
+
+}
+
+/* Subtle gradient wrapper effect on focus */
+.searchbar:focus-within {
+  background: #ffffff;
+  border-color: #6366f1; /* Premium Indigo */
+  box-shadow: 
+    0 10px 25px -5px rgba(99, 102, 241, 0.15),
+    0 8px 10px -6px rgba(99, 102, 241, 0.1),
+    0 0 0 3px rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
+}
+
+.searchIcon {
+  width: 1.35rem;
+  height: 1.35rem;
+  margin-right: 0.875rem;
+  color: #6b7280;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.searchbar:focus-within .searchIcon {
+  color: #6366f1;
+  transform: scale(1.1) rotate(5deg);
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1f2937;
+  outline: none;
+  padding: 0;
+  width: 100%;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+  transition: color 0.2s ease;
+}
+
+.searchbar:focus-within .searchInput::placeholder {
+  color: #cbd5e1;
+}
+
+/* Premium Kbd Shortcut Badge */
+.shortcutBadge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 600;
+  gap: 2px;
+  user-select: none;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.searchbar:focus-within .shortcutBadge {
+  opacity: 0; /* Smoothly hides shortcut when user starts active session */
+}
+
+/* Responsive Adaptive Viewports */
+@media (max-width: 640px) {
+  .searchbar {
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+  }
+  
+  .searchInput {
+    font-size: 1rem;
+  }
+
+  .shortcutBadge {
+    display: none; /* Hide shortcut panel on mobile gestures */
+  }
+}

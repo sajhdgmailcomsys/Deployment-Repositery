@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Sidebar.module.css */
+
+/* Core Sidebar Container */
+.sidebar {
+
+  background-color: #1e293b;
+  height: 100%;
+  color: #f8fafc;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   z-index: 4;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+  
+}
+.sidebardiv{
+  width: 100%;
+  height: 100%;
+   display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+ 
+}
+
+/* Width Toggles */
+.collapsed {
+  width: 0;
+}
+
+.expanded {
+  width: 260px;
+}
+
+/* Main Toggle Button Base */
+
+/* Button Layout States */
+.firstmodebutton {
+  align-self: center; /* Centered layout when collapsed */
+}
+
+.secondmodebutton {
+  align-self: flex-end;
+  transform: rotate(180deg); /* Pushed to the right when expanded */
+}
+
+/* Red Badge Overlays */
+.redbadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  background-color: #ef4444; /* Alert red */
+  border-radius: 50%;
+  border: 2px solid #1e293b; /* Matches sidebar bg to pop out */
+}
+
+/* Inner Layout Content wrapper */
+.sidebarcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+  width: 100%;
+  animation: fadeIn 0.2s ease-in-out forwards;
+}
+
+/* User Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 8px;
+  border-bottom: 1px solid #334155;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #3b82f6; /* Accent blue */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.profile button {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: left;
+  transition: color 0.2s, background-color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile button:hover {
+  color: #f8fafc;
+  background-color: #334155;
+}
+
+/* Account Options Navigation List */
+.accountoptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.accountoptions button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: left;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.accountoptions button:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+/* Shift order badge precisely next to text item */
+.accountoptions .redbadge {
+  top: 18px;
+  right: 16px;
+}
+
+/* Soft entry animation for expanded details */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

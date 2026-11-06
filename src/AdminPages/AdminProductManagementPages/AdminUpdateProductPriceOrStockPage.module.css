@@ -1,0 +1,259 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.mainbackground {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f8fafc;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1e293b;
+}
+
+
+
+.background {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mainbody {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* ==========================================================================
+   2. Centered Form Container Card
+   ========================================================================== */
+.formcontainer {
+  width: 100%;
+  max-width: 680px;
+  margin: 1rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.formcontainer form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+
+.productname,
+.newCostPrice,
+.newSellingPrice,
+.newStock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+  width: 100%;
+}
+
+.productname label,
+.newCostPrice label,
+.newSellingPrice label,
+.newStock label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.productname input,
+.newCostPrice input,
+.newSellingPrice input,
+.newStock input,
+#stockupdatemode {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #0f172a;
+  background-color: #ffffff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productname input:focus,
+.newCostPrice input:focus,
+.newSellingPrice input:focus,
+.newStock input:focus,
+#stockupdatemode:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Styling native select element with custom arrow icon */
+#stockupdatemode {
+  cursor: pointer;
+  background-image: url("../../assets/DownArrow.png");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+  appearance: none;
+  padding-right: 2.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, filter 0.3s ease;
+}
+
+
+.productsuggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  z-index: 50;
+  height: 200px;
+  overflow-y: auto;
+  transition: height 0.2s ease-in-out;
+  
+}
+
+.productsuggestions[data-close-product-suggestions="true"] {
+  height:  0 !important;
+  border: none;
+}
+
+.productsuggestion button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #334155;
+  transition: background-color 0.15s ease;
+}
+
+.productsuggestion button:hover,
+.productsuggestion button:focus {
+  background-color: #f1f5f9;
+  outline: none;
+}
+
+
+.isfeaturedcheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  user-select: none;
+}
+
+.isfeaturedcheckbox input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
+.isfeaturedcheckbox label {
+  font-size: 0.95rem;
+  color: #334155;
+  cursor: pointer;
+}
+
+.errortext {
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin: 0;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+.submitbutton {
+  width: 100%;
+  background-color: #3b82f6;
+  color: #ffffff;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.submitbutton:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.submitbutton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   6. Media Queries (Responsive Breakpoints)
+   ========================================================================== */
+
+/* Tablets & Desktop Viewports */
+@media (min-width: 640px) {
+  .mainbody {
+    padding: 2.5rem;
+  }
+
+  .formcontainer {
+    padding: 2.5rem;
+  }
+
+  .formcontainer form {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Spanning element control across form tracks */
+  .productname,
+  .isfeaturedcheckbox,
+  .submitbutton {
+    grid-column: span 2;
+  }
+
+  /* Structural pairing for financial parameters side-by-side */
+  .newCostPrice,
+  .newSellingPrice {
+    grid-column: span 1;
+  }
+
+  /* Split row design configuration specifically for numerical input & selection values */
+  .newStock {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .newStock label {
+    grid-column: span 2;
+  }
+
+  .newStock .errortext {
+    grid-column: span 2;
+  }
+
+  /* Push right positioning for primary call-to-actions */
+  .submitbutton {
+    width: auto;
+    justify-self: flex-end;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

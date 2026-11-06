@@ -1,0 +1,188 @@
+.orderscontainerscreen {
+  width: 100vw;
+}
+
+.orderscontainer{
+    max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1f2937;
+}
+
+.orderstatusselectdiv {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Modern styling for select tags */
+.orderstatusselect, 
+#setneworderstatus {
+  padding: 0.6rem 2rem 0.6rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none; /* Removes native arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://w3.org' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1em;
+}
+
+.orderstatusselect:focus,
+#setneworderstatus:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* 3. Orders Grid Wrapper */
+.orderscontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Individual Order Card */
+.order {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden; /* Ensures child animations don't bleed out */
+}
+
+/* Modern Button styling */
+.order button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.order button:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+}
+
+/* 4. Smooth Transitioning Sub-Containers */
+
+/* Target the "Set Order Status" slider wrapper */
+.setorderstatuscontainer {
+  padding: 1rem 1.5rem 0.5rem 1.5rem;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+/* Dynamic CSS Grid for smooth height expansion */
+.setorderstatuscontainer div[data-is-set-order-status-container-open] {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.setorderstatuscontainer div[data-is-set-order-status-container-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+/* Inner content must have overflow hidden for the grid trick to work */
+.setorderstatuscontainer div[data-is-set-order-status-container-open] > * {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  /* Clean padding transition */
+  padding-top: 0rem;
+  transition: padding 0.3s ease;
+}
+
+.setorderstatuscontainer div[data-is-set-order-status-container-open="true"] > * {
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.orderdetails {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1.5rem;
+  align-items: center;
+}
+
+.orderdetails > div {
+  overflow: hidden;
+  height: auto;
+}
+
+.orderdetails p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4b5563;
+  width: 100%;
+  
+  /* Vertical Scroll Fixes */
+  max-height: 4.5rem;          
+  display: block;              
+  overflow-y: auto;            
+  scrollbar-width: none;       
+
+  overflow-x: hidden;         
+  overflow-wrap: break-word;   
+  word-break: break-word;     
+}
+
+.orderdetails p::-webkit-scrollbar {
+  display: none;
+}
+
+
+.orderid p {
+  font-weight: 600;
+  color: #111827;
+  max-height: none;            
+  overflow-y: visible;
+  overflow-x: hidden;          
+}
+
+
+
+.cancelorderbutton button {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+.cancelorderbutton button:hover {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+}
+
+.downarrowbutton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.downarrowbutton button {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.downarrowbutton button img{
+    width: 100%;
+    height: 100%;
+}
+

@@ -1,0 +1,104 @@
+/* styles.module.css */
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(248, 249, 250, 0.95); /* Soft, light background overlay */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.successscreen {
+    width: 60vw;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 450px; /* Prevents container from getting too wide on desktop */
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.successscreen img {
+  width: 30%;
+  margin-bottom: 24px;
+  object-fit: contain;
+}
+
+.successscreen div {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 1.4vw;
+  line-height: 1.6;
+  color: #454c57;
+  margin-bottom: 32px;
+}
+
+.successscreen button {
+  width: 100%;
+  padding: 14px 24px;
+  background-color: #3182ce; /* Modern digital blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.successscreen button:hover {
+  background-color: #2b6cb0;
+}
+
+.successscreen button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive adjustments for tiny screens */
+@media (max-width: 790px) {
+  
+  .successscreen {
+    padding: 30px 20px;
+    width: 80vw;
+  }
+
+  .successscreen img {
+    width:90px;
+    margin-bottom: 20px;
+  }
+
+  .successscreen div {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-height:910px) {
+
+    .successscreen{
+        transform: scale(1.2);
+    }
+    .successscreen div{
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (max-height:550px) {
+    .successscreen{
+        padding: 20px;
+    }
+    .successscreen div{
+        font-size: 16px;
+    }
+    
+    
+}
+/* Targets standard tablets / pads in both portrait and landscape */
+

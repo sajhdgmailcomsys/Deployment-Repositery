@@ -1,0 +1,32 @@
+.emptycartscreen{
+    width: calc(100% - 2rem);
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid ;
+    border-radius: 10px;
+    border-color: rgb(144, 143, 143);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.emptycartscreen img{
+    width: 30%;
+}
+.emptycartscreen p{
+    font-size: 1.3rem;
+    color: cadetblue;
+}
+
+
+@media screen and (max-width:913px) {
+    .emptycartscreen{
+        width: 100%;
+        border: none;
+        margin-left: 0;
+        border-bottom: 1px solid;
+    }
+}
