@@ -16,6 +16,8 @@ import LoadingScreen1 from "../../Components/SharedComponents/LoadingScreens/Loa
 import ErrorScreen1 from "../../Components/SharedComponents/ErrorScreens/ErrorScreen1/ErrorScreen1";
 import api from "../../API/Axios";
 import axios, { HttpStatusCode } from "axios";
+import errorIcon from "../../assets/ErrorIcon.png";
+
 
 type responseType = {
   success: boolean;
@@ -107,7 +109,7 @@ function CheckChangePasswordToken(): React.JSX.Element {
       >
         <img
           className={`${styles.successimg} ${isSuccess ? styles.isActive : styles.isInactive}`}
-          src={tickMark}
+          src={isSuccess? tickMark:errorIcon}
           alt="Succeeded"
         />
         <p className={styles.successtext}>

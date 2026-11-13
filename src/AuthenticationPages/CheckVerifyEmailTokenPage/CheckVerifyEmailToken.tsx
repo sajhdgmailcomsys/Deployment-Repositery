@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import ErrorScreen1 from "../../Components/SharedComponents/ErrorScreens/ErrorScreen1/ErrorScreen1";
 import api from "../../API/Axios";
 import axios, { HttpStatusCode } from "axios";
+import errorIcon from "../../assets/ErrorIcon.png";
 
 type responseType = {
   success: boolean; 
@@ -97,7 +98,7 @@ const [isSuccess, setIsSuccess] = useState<boolean>(false);
         className={styles.background}
       >
         <div className={styles.successscreen}>
-          <img src={tickMark} alt="Verification Successful" />
+          <img src={isSuccess? tickMark:errorIcon} alt={isSuccess? "Verification Successfull":"Verification failed"} />
           <div>
             { isSuccess?
             "Your email has been verified successfully! You can now access all of our services and start creating orders. Click below to visit the homepage.":"It seems like either your email verification token is wrong or it is expired click on the given link below to generate another verification link."}
