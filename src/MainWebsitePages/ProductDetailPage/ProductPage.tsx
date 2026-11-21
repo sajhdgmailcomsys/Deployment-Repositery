@@ -140,12 +140,9 @@ function ProductPage(): React.JSX.Element {
             </div>
           </div>
           <div className={styles.griddetails}>
-            <div
-              className={styles.productdiscription}
-              dangerouslySetInnerHTML={{
-                __html: productDetails?.description || "",
-              }}
-            />
+            <p className={styles.productdiscription}>
+                {productDetails?.description}
+              </p>
             <p className={styles.price}>{`PKR ${productDetails?.price}`}</p>
             <QuantityInputBox
               quantity={quantity}
@@ -153,9 +150,13 @@ function ProductPage(): React.JSX.Element {
               stock={productDetails?.stock ?? 0}
               unit={productDetails?.unit ?? "Items"}
             ></QuantityInputBox>
-            <p className={styles.detaileddescription}>
-              {productDetails?.detailedDescription}
-            </p>
+            
+            <div
+              className={styles.detaileddescription}
+              dangerouslySetInnerHTML={{
+                __html: productDetails?.detailedDescription || "",
+              }}
+            />
             <div className={styles.addtocart}>
               <button onClick={addToCart}>Add To Cart</button>
             </div>
